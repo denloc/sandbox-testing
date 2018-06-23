@@ -16,3 +16,6 @@
 1. Open Git Bash.
 2. cd src/sandbox-testing
 3. firebase deploy
+
+### Firebase Console
+1. console.firebase.google.com
