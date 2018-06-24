@@ -1,0 +1,38 @@
+li {
+  display: inline;
+  padding-right: 50px;
+}
+
+ul a {
+  font-family: sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 12;
+}
+
+
+ul a:hover {
+  text-decoration: underline;
+}
+
+aside {
+  background-color: red;
+  float: right;
+}
+
+#deserve {
+    display: table;
+    height: 400px;
+    margin: 0 auto;
+    width: 400px;
+    margin-top: 200px;
+}
+
+.text {
+    background: #f2f2f2;
+    padding: 40px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: green;
+}
