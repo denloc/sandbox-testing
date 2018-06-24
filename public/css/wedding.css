@@ -41,3 +41,7 @@
   font-family: sans-serif;
   font-size: 12;
 }
+
+li {
+  display: inline;
+}
