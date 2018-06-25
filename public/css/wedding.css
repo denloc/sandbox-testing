@@ -10,38 +10,57 @@
 
 .main {
   background-color: purple;
+  width: 600px;
+  margin: auto;
+  text-align: center;
+  margin-top: 200px;
 }
 
 .links {
-  background-color: red;
   font-family: sans-serif;
   font-size: 12;
+  float: right;
 }
 
 #share {
   background-color: yellow;
   font-family: sans-serif;
   font-size: 12;
+  width: 600px;
+  margin: auto;
 }
 
 #alot {
   background-color: green;
   font-family: sans-serif;
   font-size: 12;
+  width: 600px;
+  margin: auto;
 }
 
 #more {
   background-color: blue;
   font-family: sans-serif;
   font-size: 12;
+  width: 600px;
+  margin: auto;
 }
 
 #legal {
   background-color: gray;
   font-family: sans-serif;
   font-size: 12;
+  width: 600px;
+  margin: auto;
 }
 
 li {
   display: inline;
+  padding-right: 50px;
 }
+
+.other {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+  }
