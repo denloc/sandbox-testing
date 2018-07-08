@@ -6,6 +6,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
 
     <style>
+      /* Just some quick styling to make it look kind of pretty. */
       body {
         background: #e2e1e0;
         text-align: center;
@@ -35,6 +36,8 @@
     </style>
   </head>
   <body>
+    <!-- Some placeholder markup that will eventually hold the data that
+         we load in from the databse. -->
     <div id="game">
       <h1>
         Title:
@@ -66,7 +69,8 @@
   </body>
 
   <script type="application/javascript">
-    // Initialize Firebase
+    // Initialize Firebase. This is magic that I copied and pasted from the Firebase website.
+    // It just works, there's no need to understand the magic, just trust the magic.
     firebase.initializeApp({
       apiKey: "AIzaSyDROWCcSIpECE1shnuMnvV2vOYW5gURLCM",
       authDomain: "dennis-car-cleaning.firebaseapp.com",
@@ -76,20 +80,29 @@
       messagingSenderId: "87694785093"
     });
 
+    // This get's a reference to our database so we can actually interact with the databse.
+    // Notice the variable is named "db" as a short hand for database.
     var db = firebase.firestore();
 
+    // The firebase website told me to do this.
     db.settings({
       timestampsInSnapshots: true
     });
 
+    // Look for the element that has the 'load' id, and then 'listen' for click events.
     document.getElementById("load").addEventListener('click', () => {
-      console.log('Hello');
+      // When the button is clicked, look through the board-games collection
+      // for the document that has the title of 'Ticket to Ride'. I added in some
+      // test data manually through the firebase web console.
       db.collection("board-games")
         .where("title", "==", "Ticket to Ride")
         .get()
         .then(querySnapshot => {
+          // After the request to the database returns, loop through the list of results.
+          // There should only be one, but technically there could be multiple games with
+          // the same name so we after look through a list of results.
           querySnapshot.forEach(game => {
-            console.log(game.data());
+            // Populate the different html elements with values from the database.
             document.getElementById("title").innerHTML = game.data().title;
             document.getElementById("designer").innerHTML = game.data().designer;
             document.getElementById("players").innerHTML = game.data().min_players + "-" + game.data().max_players;
