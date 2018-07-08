@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
+
+    <style>
+      body {
+        background: #e2e1e0;
+        text-align: center;
+        font-size: 22px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      #game {
+        background: #fff;
+        border-radius: 5px;
+        padding: 30px;
+        display: inline-block;
+        margin: 1rem;
+        position: relative;
+        width: 400px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        top: 0;
+      }
+
+      #game:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game">
+      <h1>
+        Title:
+        <span id="title"></span>
+      </h1>
+      <hr>
+      <p>
+        Designer:
+        <span id="designer"></span>
+      </p>
+      <p>
+        Players:
+        <span id="players"></span>
+      </p>
+      <p>
+        Play time:
+        <span id="play-time"></span>
+      </p>
+      <p>
+        Publisher:
+        <span id="publisher"></span>
+      </p>
+      <p>
+        Publisher:
+        <span id="age"></span>
+      </p>
+      <button id="load">Load Data</button>
+    </div>
+  </body>
+
+  <script type="application/javascript">
+    // Initialize Firebase
+    firebase.initializeApp({
+      apiKey: "AIzaSyDROWCcSIpECE1shnuMnvV2vOYW5gURLCM",
+      authDomain: "dennis-car-cleaning.firebaseapp.com",
+      databaseURL: "https://dennis-car-cleaning.firebaseio.com",
+      projectId: "dennis-car-cleaning",
+      storageBucket: "dennis-car-cleaning.appspot.com",
+      messagingSenderId: "87694785093"
+    });
+
+    var db = firebase.firestore();
+
+    db.settings({
+      timestampsInSnapshots: true
+    });
+
+    document.getElementById("load").addEventListener('click', () => {
+      console.log('Hello');
+      db.collection("board-games")
+        .where("title", "==", "Ticket to Ride")
+        .get()
+        .then(querySnapshot => {
+          querySnapshot.forEach(game => {
+            console.log(game.data());
+            document.getElementById("title").innerHTML = game.data().title;
+            document.getElementById("designer").innerHTML = game.data().designer;
+            document.getElementById("players").innerHTML = game.data().min_players + "-" + game.data().max_players;
+            document.getElementById("play-time").innerHTML = game.data().min_play_time + "-" + game.data().max_play_time + " minutes";
+            document.getElementById("publisher").innerHTML = game.data().publisher;
+            document.getElementById("age").innerHTML = game.data().min_age + "+";
+          });
+        });
+    });
+  </script>
+</html>
