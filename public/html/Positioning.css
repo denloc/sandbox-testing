@@ -1,0 +1,33 @@
+html{
+  background-color: orange;
+  padding: 10px;
+  height: 3000px;
+}
+
+body{
+  background-color: yellow;
+  padding: 10px;
+  margin: 0;
+  position: relative;
+  top: 50px;
+}
+
+header{
+  background-color: pink;
+  position: fixed;
+  top: 0;
+  left: 200px;
+}
+
+nav{
+  background-color: red;
+  margin: 10px;
+  position: relative;
+  top: 10px;
+}
+
+footer{
+  background-color: blue;
+  position: fixed;
+  top: 0;
+}
