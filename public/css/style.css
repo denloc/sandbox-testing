@@ -2,7 +2,7 @@
   width: 80%;
   min-width: 600px;
   margin:auto;
-  background: green;
+  background: red;
   }
 
 .content, aside {
@@ -10,7 +10,7 @@
 }
 
 .content {
-  background: red;
+  background: green;
   float: left;
   width: 80%;
 }

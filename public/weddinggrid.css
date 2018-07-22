@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.list {
+  font-family: sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+  ". . view start sign"
+}
+
+.view {
+  grid-area: view;
+  /*background-color: yellow;*/
+  margin-left: 180px;
+}
+
+.start {
+  grid-area: start;
+  /*background-color: pink;*/
+  margin-left: 80px;
+}
+
+.sign {
+  grid-area: sign;
+  /*background-color: lightgreen;*/
+  margin-right: 100px;
+}
+
+
+.grid {
+  /*background-color: 993366;*/
+  /*margin-top: 20px;*/
+  letter-spacing: 1px;
+  background: linear-gradient(to top, rgba(134, 115, 140), rgba(134, 115 , 140, .65));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+  "deserve deserve"
+  "built built"
+  "share share"
+}
+
+.deserve {
+  grid-area: deserve;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 35px;
+}
+
+.built {
+  grid-area: built;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+}
+
+.share {
+  grid-area: share;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+}
