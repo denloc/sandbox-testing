@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+html,body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+}
+*/
+
+
+
+.grid {
+  display: grid;
+  background-color: darkkhaki;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: minmax(100px, auto);
+  grid-gap: 10px;
+  width: 100vw;
+  height: 100vh;
+  grid-template-areas:
+  "one one one"
+  "two three three"
+  "four four five"
+  "six six five"
+  "seven eight five"
+  "nine ten five"
+  "nine ten five"
+  "twelve twelve eleven";
+}
+
+.one {
+  grid-area: one;
+  background-color: yellow;
+  border-style: solid;
+  border-width: 10px;
+  border-color: lightgray;
+}
+
+.two {
+  grid-area: two;
+  background-color: blue;
+  border-style: solid;
+  border-width: 10px;
+  border-color: lightgray;
+}
+
+.three {
+  grid-area: three;
+  background-color: pink;
+  border-style: solid;
+  border-width: 10px;
+  border-color: lightgray;
+}
+
+.four {
+  grid-area: four;
+  background-color: green;
+  border-style: solid;
+  border-width: 10px;
+  border-color: lightgray;
+}
+
+.five {
+  grid-area: five;
+  background-color: lightgreen;
+  border-style: solid;
+  border-width: 10px;
+  border-color: lightgray;
+}
+
+.six {
+  grid-area: six;
+  background-color: lightblue;
+  border-style: solid;
+  border-width: 10px;
+  border-color: lightgray;
+}
+
+.seven {
+  grid-area: seven;
+  background-color: purple;
+  border-style: solid;
+  border-width: 10px;
+  border-color: lightgray;
+}
+
+.eight {
+  grid-area: eight;
+  background-color: chartreuse;
+  border-style: solid;
+  border-width: 10px;
+  border-color: lightgray;
+}
+
+.nine {
+  grid-area: nine;
+  background-color: aqua;
+  border-style: solid;
+  border-width: 10px;
+  border-color: lightgray;
+}
+
+.ten {
+  grid-area: ten;
+  background-color: skyblue;
+  border-style: solid;
+  border-width: 10px;
+  border-color: lightgray;
+}
+
+.eleven {
+  grid-area: eleven;
+  background-color: red;
+  border-style: solid;
+  border-width: 10px;
+  border-color: lightgray;
+}
+
+.twelve {
+  grid-area: twelve;
+  background-color: brown;
+  border-style: solid;
+  border-width: 10px;
+  border-color: lightgray;
+}
