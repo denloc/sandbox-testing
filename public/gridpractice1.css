@@ -32,7 +32,7 @@ body {
   "two three three"
   "four four five"
   "six six five"
-  "seven eight five"
+  "seven submit five"
   "nine ten five"
   "nine ten five"
   "twelve twelve eleven";
@@ -89,15 +89,17 @@ body {
 .seven {
   grid-area: seven;
   background-color: purple;
-  border-style: solid;
   border-width: 10px;
   border-color: lightgray;
 }
 
-.eight {
-  grid-area: eight;
-  background-color: chartreuse;
-  border-style: solid;
+.submit {
+  grid-area: submit;
+  grid-template-rows: repeat(3, 1fr);
+  border-radius: 8px;
+  align-self: center;
+  justify-self: center;
+  background-color: magenta;
   border-width: 10px;
   border-color: lightgray;
 }
